@@ -10,9 +10,14 @@ public class SemDesconto extends Desconto {
         super(null);
     }
 
-    public BigDecimal calcular(Orcamento orcamento) {
+    public BigDecimal efetuarCalculo(Orcamento orcamento) {
         System.out.println("Nenhum tipo de desconto encontrado para aplicar");
         return BigDecimal.ZERO;
+    }
+
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return true;
     }
     
 }

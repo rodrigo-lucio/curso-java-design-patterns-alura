@@ -12,6 +12,9 @@ public class DescontoParaOrcamentoComMaisDeXValor extends Desconto {
         super(proximo);
     }
 
+    /* Aplicando o padrão Template Method
+     * Aqui jogamos essa lógica para a classe Desconto, pois a classe DescontoParaOrcamentoComMaisDeXItens implementava
+     * uma lógica parecida, apenas mudando o if
     public BigDecimal calcular(Orcamento orcamento) {
         System.out.println("Tentando aplicar DescontoParaOrcamentoComMaisDeXValor");
         if (orcamento.getValor().compareTo(new BigDecimal(VALOR_ORCAMENTO_DESCONTO)) > 0) {
@@ -20,4 +23,16 @@ public class DescontoParaOrcamentoComMaisDeXValor extends Desconto {
      
         return proximo.calcular(orcamento);
     }
+    */
+
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return orcamento.getValor().compareTo(new BigDecimal(VALOR_ORCAMENTO_DESCONTO)) > 0;
+    }
+
+    @Override
+    public BigDecimal efetuarCalculo(Orcamento orcamento) {
+        return orcamento.getValor().multiply(new BigDecimal(PERCENTUAL_DESCONTO));
+    }
+
 }
