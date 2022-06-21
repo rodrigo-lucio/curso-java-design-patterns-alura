@@ -24,7 +24,7 @@ public class CalculadoraDescontos {
          */
         
         /*
-         * Aqui utilizamos o Chain of Responsability, ou seja, corrente de de responsabilidades
+         * Aqui utilizamos o Chain of Responsability, ou seja, corrente de responsabilidades
          * Vamos chamando classe a classe até que consigamos encontrar uma que seja aplicada 
          * Até chegar no fim dessa corrente
          */
