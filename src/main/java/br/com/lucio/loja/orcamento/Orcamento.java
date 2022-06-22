@@ -16,6 +16,8 @@ public class Orcamento {
     public Orcamento(BigDecimal valor, int quantidadeItens) {
         this.valor = valor;
         this.quantidadeItens = quantidadeItens;
+        
+        //Situacao começa com em analise, para fazer o uso do padrao State
         this.situacao = new EmAnalise();
     }
 
