@@ -24,7 +24,7 @@ public class TestePedidos {
 		
 		// O Command separa em comando o que vc quer fazer com os dados recebidos
 		GeraPedido geraPedido = new GeraPedido(cliente, valorOrcamento, qtdItens);
-		//Os dados de GeraPedido poderiam vir de uma API, ou de diferentes fontes de dados por exemplo
+		//Os dados de GeraPedido poderiam vir de uma API, de um botao, de um atalho, ou de diferentes fontes de dados por exemplo
 		GeraPedidoHandler handler = new GeraPedidoHandler();
 		handler.execute(geraPedido);
 		
