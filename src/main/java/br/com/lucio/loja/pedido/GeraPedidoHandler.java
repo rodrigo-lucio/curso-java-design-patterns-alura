@@ -10,7 +10,7 @@ public class GeraPedidoHandler {
 		Orcamento orcamento = new Orcamento(geraPedido.getValor(), geraPedido.getQtdItens());
 		Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
 		
-		//Receberia os @Component / @Repository do Spring por exemplo, e chamaria
+		// Receberia os @Component / @Repository do Spring por exemplo, e chamaria
 		System.out.println("Salvar pedido");
 		System.out.println("Enviar email");
 	}

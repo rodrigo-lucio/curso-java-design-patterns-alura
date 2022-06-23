@@ -13,10 +13,9 @@ public class TesteDescontos {
         CalculadoraDescontos calculadoraDescontos = new CalculadoraDescontos();
         System.out.println(calculadoraDescontos.calcular(orcamento1));
         
-        
         orcamento1.aprovar();
         /* orcamento1.reprovar(); vai dar Exception do State, se chamado logo apos o Aprovar */
-        orcamento1.finalizar(); //Se chamar o finalizar sem aprovar/reprovar antes, vai dar Exception do State
+        orcamento1.finalizar(); // Se chamar o finalizar sem aprovar/reprovar antes, vai dar Exception do State
         
         Orcamento orcamento2 = new Orcamento(new BigDecimal("1200"), 6);
         System.out.println(calculadoraDescontos.calcular(orcamento2));
