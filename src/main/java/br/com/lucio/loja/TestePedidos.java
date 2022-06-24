@@ -1,9 +1,12 @@
 package br.com.lucio.loja;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import br.com.lucio.loja.pedido.GeraPedido;
 import br.com.lucio.loja.pedido.GeraPedidoHandler;
+import br.com.lucio.loja.pedido.acao.EnviarEmailPedido;
+import br.com.lucio.loja.pedido.acao.SalvarPedidoBancoDeDados;
 
 public class TestePedidos {
 
@@ -24,10 +27,14 @@ public class TestePedidos {
 		
 		// O Command separa em comando o que vc quer fazer com os dados recebidos
 		GeraPedido geraPedido = new GeraPedido(cliente, valorOrcamento, qtdItens);
-		//Os dados de GeraPedido poderiam vir de uma API, de um botao, de um atalho, ou de diferentes fontes de dados por exemplo
-		GeraPedidoHandler handler = new GeraPedidoHandler();
-		handler.execute(geraPedido);
 		
+        // Os dados de GeraPedido poderiam vir de uma API, de um botao, de um atalho, ou de diferentes fontes de dados por exemplo
+        GeraPedidoHandler handler = new GeraPedidoHandler();//
+        handler.adicionarObservadores(new EnviarEmailPedido(), 
+                                      new SalvarPedidoBancoDeDados()
+                                      /* se tiver nova ação, vai passar ela aqui*/);
+        handler.execute(geraPedido);
+
 	}
 
 }
