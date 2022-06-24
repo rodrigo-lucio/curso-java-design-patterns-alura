@@ -32,7 +32,7 @@ public class TestePedidos {
         GeraPedidoHandler handler = new GeraPedidoHandler();//
         handler.adicionarObservadores(new EnviarEmailPedido(), 
                                       new SalvarPedidoBancoDeDados()
-                                      /* se tiver nova aÃ§Ã£o, vai passar ela aqui*/);
+                                      /* se tiver nova ação, vai passar aqui*/);
         handler.execute(geraPedido);
 
 	}

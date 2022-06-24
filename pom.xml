@@ -4,12 +4,20 @@
 	<artifactId>curso-java-design-patterns-alura</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Design Patterns em Java I: boas práticas de programação e Design Patterns em Java II: avançando nas boas práticas de programação</name>
+	<properties>
+		<lombok-version>1.18.24</lombok-version>
+		<commons-lang3-version>3.12.0</commons-lang3-version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>provided</scope>
+			<version>${lombok-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3-version}</version>
 		</dependency>
 	</dependencies>    
 </project>

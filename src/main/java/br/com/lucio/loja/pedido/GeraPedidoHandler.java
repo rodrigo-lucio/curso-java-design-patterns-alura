@@ -13,13 +13,13 @@ public class GeraPedidoHandler {
     private List<AcaoAposGerarPedido> acoes = new ArrayList<>();
 
     public void execute(GeraPedido geraPedido) {
-		Orcamento orcamento = new Orcamento(geraPedido.getValor(), geraPedido.getQtdItens());
-		Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
+        Orcamento orcamento = new Orcamento(geraPedido.getValor(), geraPedido.getQtdItens(), "89500010");
+        Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
 		
 		/*  
-		Padrão Observer:
-		Para a classe não crescer cada vez que surgir um novo observador, criamos uma lista de interface de observadores
-		Antes do padrão Observer estava assim:
+		Padr�o Observer:
+		Para a classe n�o crescer cada vez que surgir um novo observador, criamos uma lista de interface de observadores
+		Antes do padr�o Observer estava assim:
 		EnviarEmailPedido emailPedido = new EnviarEmailPedido();
 		SalvarPedidoBancoDeDados salvarPedido = new SalvarPedidoBancoDeDados();
 		

@@ -1,24 +1,33 @@
 package br.com.lucio.loja.orcamento;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import br.com.lucio.loja.orcamento.situacao.EmAnalise;
+import br.com.lucio.loja.orcamento.situacao.Finalizado;
 import br.com.lucio.loja.orcamento.situacao.Reprovado;
 import br.com.lucio.loja.orcamento.situacao.SituacaoOrcamento;
 
 public class Orcamento {
 
+    private UUID id;
     private BigDecimal valor;
     private int quantidadeItens;
     /*private String situacao;*/
     private SituacaoOrcamento situacao;
+    private String cepEntrega;
 
-    public Orcamento(BigDecimal valor, int quantidadeItens) {
+    public Orcamento(BigDecimal valor, int quantidadeItens, String cepEntrega) {
+        this.id = UUID.randomUUID();
         this.valor = valor;
         this.quantidadeItens = quantidadeItens;
-        
+        this.cepEntrega = cepEntrega;
         //Situacao começa com em analise, para fazer o uso do padrao State
         this.situacao = new EmAnalise();
+    }
+    
+    public UUID getId() {
+        return id;
     }
 
     public BigDecimal getValor() {
@@ -66,4 +75,17 @@ public class Orcamento {
     	BigDecimal valorDescontoExtra = this.situacao.calcularDescontoExtra(this);
     	this.valor = this.valor.subtract(valorDescontoExtra);
     }
+    
+    public boolean isNotFinalizado() {
+        return !this.isFinalizado();
+    }
+    
+    public boolean isFinalizado() {
+        return this.situacao instanceof Finalizado;
+    }
+
+    public String getCepEntrega() {
+        return cepEntrega;
+    }
+    
 }

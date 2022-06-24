@@ -11,7 +11,7 @@ public class TesteImpostos {
 
     public static void main(String[] args) {
 
-        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1);
+        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1, "89500010");
         CalculadoraImposto calculadoraImposto = new CalculadoraImposto();
         
         /* Antes chamavamos assim com o tipo*/
