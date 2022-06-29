@@ -10,11 +10,11 @@ import br.com.lucio.loja.orcamento.situacao.Finalizado;
 import br.com.lucio.loja.orcamento.situacao.Reprovado;
 import br.com.lucio.loja.orcamento.situacao.SituacaoOrcamento;
 
-public class Orcamento {
+public class Orcamento implements Orcavel {
 
     private UUID id;
     private BigDecimal valor;
-    private List<ItemOrcamento> itens;
+    private List<Orcavel> itens;
     /*private String situacao;*/
     private SituacaoOrcamento situacao;
     private String cepEntrega;
@@ -90,7 +90,7 @@ public class Orcamento {
         return cepEntrega;
     }
     
-    public void adicionarItem(ItemOrcamento item) {
+    public void adicionarItem(Orcavel item) {
     	this.valor = this.valor.add(item.getValor());
     	this.itens.add(item);
     }
