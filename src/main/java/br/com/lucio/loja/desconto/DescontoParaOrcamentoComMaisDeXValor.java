@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import br.com.lucio.loja.orcamento.Orcamento;
 
 public class DescontoParaOrcamentoComMaisDeXValor extends Desconto {
-    private static final String PERCENTUAL_DESCONTO = "0.5";
+    private static final String PERCENTUAL_DESCONTO = "0.2";
     private static final String VALOR_ORCAMENTO_DESCONTO = "500";
 
     public DescontoParaOrcamentoComMaisDeXValor(Desconto proximo) {
@@ -32,6 +32,7 @@ public class DescontoParaOrcamentoComMaisDeXValor extends Desconto {
 
     @Override
     public BigDecimal efetuarCalculo(Orcamento orcamento) {
+    	System.out.println("Efetuando calculo na classe DescontoParaOrcamentoComMaisDeXValor, percentual de desconto aplicado: " + PERCENTUAL_DESCONTO);
         return orcamento.getValor().multiply(new BigDecimal(PERCENTUAL_DESCONTO));
     }
 

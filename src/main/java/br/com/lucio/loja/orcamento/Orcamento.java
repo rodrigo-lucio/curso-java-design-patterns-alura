@@ -1,6 +1,8 @@
 package br.com.lucio.loja.orcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import br.com.lucio.loja.orcamento.situacao.EmAnalise;
@@ -12,15 +14,15 @@ public class Orcamento {
 
     private UUID id;
     private BigDecimal valor;
-    private int quantidadeItens;
+    private List<ItemOrcamento> itens;
     /*private String situacao;*/
     private SituacaoOrcamento situacao;
     private String cepEntrega;
 
-    public Orcamento(BigDecimal valor, int quantidadeItens, String cepEntrega) {
+    public Orcamento(String cepEntrega) {
         this.id = UUID.randomUUID();
-        this.valor = valor;
-        this.quantidadeItens = quantidadeItens;
+        this.valor = BigDecimal.ZERO;
+        this.itens = new ArrayList<>();
         this.cepEntrega = cepEntrega;
         //Situacao começa com em analise, para fazer o uso do padrao State
         this.situacao = new EmAnalise();
@@ -35,7 +37,7 @@ public class Orcamento {
     }
 
     public int getQuantidadeItens() {
-        return quantidadeItens;
+        return itens.size();
     }
 
 	public void setSituacao(SituacaoOrcamento situacao) {
@@ -86,6 +88,11 @@ public class Orcamento {
 
     public String getCepEntrega() {
         return cepEntrega;
+    }
+    
+    public void adicionarItem(ItemOrcamento item) {
+    	this.valor = this.valor.add(item.getValor());
+    	this.itens.add(item);
     }
     
 }

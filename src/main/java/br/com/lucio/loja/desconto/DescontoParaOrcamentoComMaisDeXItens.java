@@ -33,6 +33,7 @@ public class DescontoParaOrcamentoComMaisDeXItens extends Desconto {
     
     @Override
     public BigDecimal efetuarCalculo(Orcamento orcamento) {
+    	System.out.println("Efetuando calculo na classe DescontoParaOrcamentoComMaisDeXItens, percentual de desconto aplicado: " + PERCENTUAL_DESCONTO);
         return orcamento.getValor().multiply(new BigDecimal(PERCENTUAL_DESCONTO));
     }
     

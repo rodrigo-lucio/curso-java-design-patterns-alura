@@ -6,13 +6,16 @@ import br.com.lucio.loja.imposto.CalculadoraImposto;
 import br.com.lucio.loja.imposto.ICMS;
 import br.com.lucio.loja.imposto.IPI;
 import br.com.lucio.loja.imposto.ISS;
+import br.com.lucio.loja.orcamento.ItemOrcamento;
 import br.com.lucio.loja.orcamento.Orcamento;
 
 public class TesteImpostosDecorator {
 
     public static void main(String[] args) {
 
-        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1, "89500010");
+        Orcamento orcamento = new Orcamento("89500010");
+        orcamento.adicionarItem(new ItemOrcamento(new BigDecimal("100")));
+        System.out.println(orcamento.getValor());
         CalculadoraImposto calculadoraImposto = new CalculadoraImposto();
 
         
