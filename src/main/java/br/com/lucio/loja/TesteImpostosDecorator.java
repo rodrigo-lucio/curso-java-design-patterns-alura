@@ -21,6 +21,7 @@ public class TesteImpostosDecorator {
         
         
         /*
+         * Padrão Decorator
          * "Decorando" dois impostos com padrão Decorator, como se fosse uma árvore de natal
          * Aqui vai somar ICMS com IPI, com qualquer imposto a mais que quiser
          */

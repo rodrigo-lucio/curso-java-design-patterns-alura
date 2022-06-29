@@ -18,8 +18,8 @@ public class TesteImpostos {
         // calculadoraImposto.calcular(orcamento, TipoImposto.ICMS);
         
         /* Agora com o strategy, amarramos o metodo calcular com a interface */
-        System.out.println(calculadoraImposto.calcular(orcamento, new IPI()));
-        System.out.println(calculadoraImposto.calcular(orcamento, new ICMS()));
+        System.out.println(calculadoraImposto.calcular(orcamento, new IPI(null)));
+        System.out.println(calculadoraImposto.calcular(orcamento, new ICMS(null)));
 
         
     }

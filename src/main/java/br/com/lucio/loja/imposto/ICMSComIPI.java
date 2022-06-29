@@ -10,8 +10,8 @@ public class ICMSComIPI /* extends Imposto */ {
     	/*
     	 * Aplicando o decorator de forma errada 
     	 */
-    	BigDecimal icms = new ICMS().calcular(orcamento);
-    	BigDecimal ipi = new ICMS().calcular(orcamento);
+    	BigDecimal icms = new ICMS(null).calcular(orcamento);
+    	BigDecimal ipi = new ICMS(null).calcular(orcamento);
         return icms.add(ipi);
     }
 
