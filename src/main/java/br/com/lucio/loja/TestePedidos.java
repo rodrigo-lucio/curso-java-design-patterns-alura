@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.lucio.loja.pedido.GeraPedido;
 import br.com.lucio.loja.pedido.GeraPedidoHandler;
 import br.com.lucio.loja.pedido.acao.EnviarEmailPedido;
+import br.com.lucio.loja.pedido.acao.LogPedido;
 import br.com.lucio.loja.pedido.acao.SalvarPedidoBancoDeDados;
 
 public class TestePedidos {
@@ -31,8 +32,11 @@ public class TestePedidos {
         // Os dados de GeraPedido poderiam vir de uma API, de um botao, de um atalho, ou de diferentes fontes de dados por exemplo
         GeraPedidoHandler handler = new GeraPedidoHandler();//
         handler.adicionarObservadores(new EnviarEmailPedido(), 
-                                      new SalvarPedidoBancoDeDados()
-                                      /* se tiver nova a��o, vai passar aqui*/);
+                                      new SalvarPedidoBancoDeDados(),
+                                      new LogPedido()
+                                      /* se tiver nova ação, vai passar aqui*/);
+        
+        /* Metodo execute esta funcionando como uma Fachada, escondendo toda a complexidade que temos em executar a geração do pedido*/
         handler.execute(geraPedido);
 
 	}

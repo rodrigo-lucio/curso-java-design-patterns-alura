@@ -1,7 +1,5 @@
 package br.com.lucio.loja.imposto;
 
-import static java.util.Objects.nonNull;
-
 import java.math.BigDecimal;
 
 import br.com.lucio.loja.orcamento.Orcamento;

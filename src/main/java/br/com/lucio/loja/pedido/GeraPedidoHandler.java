@@ -19,9 +19,9 @@ public class GeraPedidoHandler {
         Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
 		
 		/*  
-		Padr�o Observer:
-		Para a classe n�o crescer cada vez que surgir um novo observador, criamos uma lista de interface de observadores
-		Antes do padr�o Observer estava assim:
+		Padrão Observer:
+		Para a classe não crescer cada vez que surgir um novo observador, criamos uma lista de interface de observadores
+		Antes do padrão Observer estava assim:
 		EnviarEmailPedido emailPedido = new EnviarEmailPedido();
 		SalvarPedidoBancoDeDados salvarPedido = new SalvarPedidoBancoDeDados();
 		
