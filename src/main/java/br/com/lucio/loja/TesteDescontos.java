@@ -10,7 +10,7 @@ public class TesteDescontos {
 
     public static void main(String[] args) {
 
-        Orcamento orcamento1 = new Orcamento("89500010");
+        Orcamento orcamento1 = new Orcamento();
         for (int i = 0; i < 4; i++) {
         	orcamento1.adicionarItem(new ItemOrcamento(new BigDecimal("150")));
 		}
@@ -23,7 +23,7 @@ public class TesteDescontos {
         /* orcamento1.reprovar(); vai dar Exception do State, se chamado logo apos o Aprovar */
         orcamento1.finalizar(); // Se chamar o finalizar sem aprovar/reprovar antes, vai dar Exception do State
         
-        Orcamento orcamento2 = new Orcamento("89500010");
+        Orcamento orcamento2 = new Orcamento();
         for (int i = 0; i < 6; i++) {
         	orcamento2.adicionarItem(new ItemOrcamento(new BigDecimal("300")));
 		}
@@ -33,7 +33,7 @@ public class TesteDescontos {
         System.out.println("Valor desconto: " + calculadoraDescontos.calcular(orcamento2));
 
         System.out.println("-----------------");
-        Orcamento orcamentoSemDesconto = new Orcamento("89500010");
+        Orcamento orcamentoSemDesconto = new Orcamento();
         orcamentoSemDesconto.adicionarItem(new ItemOrcamento(new BigDecimal("10")));
         System.out.println("Valor orcamento: " + orcamentoSemDesconto.getValor());
         System.out.println("Valor desconto: " + calculadoraDescontos.calcular(orcamentoSemDesconto));

@@ -7,7 +7,6 @@ import java.util.UUID;
 
 import br.com.lucio.loja.orcamento.situacao.EmAnalise;
 import br.com.lucio.loja.orcamento.situacao.Finalizado;
-import br.com.lucio.loja.orcamento.situacao.Reprovado;
 import br.com.lucio.loja.orcamento.situacao.SituacaoOrcamento;
 
 public class Orcamento implements Orcavel {
@@ -19,20 +18,24 @@ public class Orcamento implements Orcavel {
     private SituacaoOrcamento situacao;
     private String cepEntrega;
 
-    public Orcamento(String cepEntrega) {
+    public Orcamento() {
         this.id = UUID.randomUUID();
         this.valor = BigDecimal.ZERO;
         this.itens = new ArrayList<>();
-        this.cepEntrega = cepEntrega;
         //Situacao começa com em analise, para fazer o uso do padrao State
         this.situacao = new EmAnalise();
     }
-    
     public UUID getId() {
         return id;
     }
 
     public BigDecimal getValor() {
+    	/* Digamos que esse getValor venha de uma Api*/
+    	try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
         return valor;
     }
 
@@ -89,7 +92,11 @@ public class Orcamento implements Orcavel {
     public String getCepEntrega() {
         return cepEntrega;
     }
-    
+
+    public void setCepEntrega(String cepEntrega) {
+    	this.cepEntrega = cepEntrega;
+    }
+
     public void adicionarItem(Orcavel item) {
     	this.valor = this.valor.add(item.getValor());
     	this.itens.add(item);
