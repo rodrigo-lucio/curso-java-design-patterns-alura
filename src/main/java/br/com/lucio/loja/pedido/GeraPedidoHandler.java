@@ -14,7 +14,7 @@ public class GeraPedidoHandler {
     private List<AcaoAposGerarPedido> acoes = new ArrayList<>();
 
     public void execute(GeraPedido geraPedido) {
-        Orcamento orcamento = new Orcamento("89500010");
+        Orcamento orcamento = new Orcamento();
         orcamento.adicionarItem(new ItemOrcamento(geraPedido.getValor()));
         Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
 		
