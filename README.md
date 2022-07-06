@@ -1,6 +1,6 @@
 ## 💻 Cursos: Design Patterns em Java I: boas práticas de programação e Design Patterns em Java II: avançando nas boas práticas de programação
 
-- Código dos cursso "Design Patterns em Java I: boas práticas de programação" e "Design Patterns em Java II: avançando nas boas práticas de programaçãos" da Alura, onde um complementou o outro.
+- Código dos cursos "Design Patterns em Java I: boas práticas de programação" e "Design Patterns em Java II: avançando nas boas práticas de programaçãos" da Alura, onde um complementou o outro.
 
 ## :books: Conteúdos
 - Padrões comportamentais:
