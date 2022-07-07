@@ -3,6 +3,7 @@ package br.com.lucio.loja;
 import java.math.BigDecimal;
 
 import br.com.lucio.loja.desconto.CalculadoraDescontos;
+import br.com.lucio.loja.desconto.Desconto;
 import br.com.lucio.loja.orcamento.ItemOrcamento;
 import br.com.lucio.loja.orcamento.Orcamento;
 
