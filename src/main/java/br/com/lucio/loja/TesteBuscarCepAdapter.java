@@ -13,8 +13,10 @@ public class TesteBuscarCepAdapter {
     public static void main(String[] args) {
 
         Orcamento orcamento1 = new Orcamento();
-        orcamento1.setCepEntrega("89500010");
+        orcamento1.setCepEntrega("89500431");
         orcamento1.adicionarItem(new ItemOrcamento(new BigDecimal("200")));
+        
+        
         BuscarCepOrcamento cepOrcamento = new BuscarCepOrcamento(new HttpURLConnectionApiCep());
         System.out.println(cepOrcamento.consultarCep(orcamento1.getCepEntrega()));
         

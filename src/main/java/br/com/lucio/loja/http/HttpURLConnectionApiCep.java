@@ -7,7 +7,7 @@ import java.net.http.HttpResponse;
 
 public class HttpURLConnectionApiCep implements HttpAdapterConsultaCep {
 
-    private static final String URL_API = "https://viacep.com.br/ws/%s/json/";
+    private static final String URL_API = "https://ws.apicep.com/cep/%s.json";
     
     @Override
     public String get(String cep) {
